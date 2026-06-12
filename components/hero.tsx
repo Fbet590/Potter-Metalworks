@@ -25,7 +25,7 @@ export function Hero() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <span className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold tracking-tight text-foreground">
+              <span className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold tracking-tight text-black">
                 POTTER METALWORKS
               </span>
             </div>
