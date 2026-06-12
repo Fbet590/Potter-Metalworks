@@ -71,7 +71,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="border-t border-card/10 py-6">
         <div className="container mx-auto px-4 text-center text-card/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Phoenix Iron Design. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Potter Metalworks. All rights reserved.</p>
         </div>
       </div>
     </footer>
