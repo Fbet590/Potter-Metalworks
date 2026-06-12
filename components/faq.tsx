@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "What areas do you serve?",
-    answer: "We serve the entire Phoenix metropolitan area including Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria, and surrounding communities. For larger projects, we're available throughout Arizona.",
+    answer: "We serve the entire Los Angeles metropolitan area including Beverly Hills, Pasadena, Santa Monica, Burbank, Glendale, Long Beach, Torrance, and surrounding communities. For larger projects, we're available throughout Southern California.",
   },
   {
     question: "Can you work from my design or drawings?",

@@ -61,7 +61,7 @@ const galleryImages = [
   // Image 26 - SIMPLE
   { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Mar%207%2C%202026%20at%2004_32_02%20PM-ovsNeVOfqrbsIaXNIjUQUVIfbRZfNP.png", alt: "Arched wood and iron driveway gate", category: "SIMPLE" },
   // Image 27 - CUSTOM
-  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Mar%207%2C%202026%20at%2004_15_16%20PM-f8pgQhyWj4QRB1DjBUEW8FwcxS0q8J.png", alt: "Iron patio doors on Arizona home", category: "CUSTOM" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Mar%207%2C%202026%20at%2004_15_16%20PM-f8pgQhyWj4QRB1DjBUEW8FwcxS0q8J.png", alt: "Iron patio doors on Los Angeles home", category: "CUSTOM" },
   // Image 28 - CUSTOM
   { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Mar%207%2C%202026%20at%2004_29_27%20PM-UcAlqDuTz6WRjtpI1tFhmb3uxFuyNA.png", alt: "Black iron sliding gate with decorative circles", category: "CUSTOM" },
   // Image 29 - CUSTOM
