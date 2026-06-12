@@ -38,11 +38,11 @@ export function Footer() {
             <div>
               <div className="mb-4">
                 <span className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-card">
-                  PHOENIX <span className="text-primary">IRON</span> DESIGN
+                  POTTER  METALWORKS
                 </span>
               </div>
               <p className="text-card/70 mb-4">
-                Arizona&apos;s premier welding and metal fabrication company. Serving Phoenix and surrounding areas since 2009.
+                California&apos;s premier welding and metal fabrication company. Serving LA and surrounding areas since 2009.
               </p>
               
             </div>
@@ -55,10 +55,10 @@ export function Footer() {
               <ul className="space-y-2 text-card/70">
                 <li className="flex items-center gap-3">
                   <Clock className="w-4 h-4 text-primary" />
-                  <span>Monday – Friday: 7am – 5pm</span>
+                  <span>Monday – Friday: 5pm - 8pm</span>
                 </li>
-                <li className="pl-7">Saturday: 8am – 2pm</li>
-                <li className="pl-7">Sunday: Closed</li>
+                <li className="pl-7">Saturday: 8am – 5pm</li>
+                <li className="pl-7">Sunday: 8am - 5pm</li>
               </ul>
               <p className="mt-4 text-sm text-card/60">
                 Emergency services available 24/7 for existing customers.
@@ -71,7 +71,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="border-t border-card/10 py-6">
         <div className="container mx-auto px-4 text-center text-card/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Phoenix Iron Design. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Potter Metalworks. All rights reserved.</p>
         </div>
       </div>
     </footer>

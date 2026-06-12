@@ -25,8 +25,8 @@ export function Hero() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <span className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold tracking-tight text-foreground">
-                POTTER METALWORKS
+              <span className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold tracking-tight text-black">
+                <span style={{ color: "#B64E11" }}>POTTER</span> METALWORKS
               </span>
             </div>
 
@@ -132,7 +132,7 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary/90 text-primary-foreground text-sm font-semibold tracking-wider uppercase rounded">
-              Arizona&apos;s Trusted Metal Experts
+              CALIFORNIA&apos;S Trusted Metal Experts
             </span>
           </div>
 
