@@ -162,8 +162,8 @@ export function QuoteForm() {
             Get Started Today
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-[27px] md:text-[40px] font-bold text-foreground mb-4">
-            <span className="block">Side Gates · $1,000</span>
-            <span className="block">RV Gates · $2,000</span>
+            <span className="block">Side Gates · $1,500</span>
+            <span className="block">RV Gates · $2,200</span>
           </h2>
           <p className="text-muted-foreground text-sm md:text-base max-w-lg mx-auto">
             Need something bigger or more complex? No problem
