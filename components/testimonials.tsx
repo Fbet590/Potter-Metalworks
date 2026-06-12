@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Michael Rodriguez",
     location: "Scottsdale, AZ",
-    text: "Phoenix Iron Design built custom gates for our home and the quality is outstanding. They were professional, on time, and the craftsmanship exceeded our expectations. Highly recommend!",
+    text: "Potter Metalworks built custom gates for our home and the quality is outstanding. They were professional, on time, and the craftsmanship exceeded our expectations. Highly recommend!",
     rating: 5,
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
   {
     name: "Jennifer Williams",
     location: "Gilbert, AZ",
-    text: "We needed an RV gate for our side yard and Phoenix Iron Design delivered exactly what we wanted. The design is both functional and beautiful. Neighbors keep asking who did the work!",
+    text: "We needed an RV gate for our side yard and Potter Metalworks delivered exactly what we wanted. The design is both functional and beautiful. Neighbors keep asking who did the work!",
     rating: 5,
   },
   {
@@ -51,7 +51,7 @@ const testimonials = [
   {
     name: "Amanda Foster",
     location: "Glendale, AZ",
-    text: "From the initial consultation to the final installation, everything was seamless. Our iron entry door is stunning and the quality is top-notch. Highly recommend Phoenix Iron Design!",
+    text: "From the initial consultation to the final installation, everything was seamless. Our iron entry door is stunning and the quality is top-notch. Highly recommend Potter Metalworks!",
     rating: 5,
   },
 ]

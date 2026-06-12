@@ -15,7 +15,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: 'Phoenix Iron Design | Custom Welding & Metal Fabrication in Arizona',
+  title: 'Potter Metalworks | Custom Welding & Metal Fabrication in California',
   description: 'Premier welding and fabrication services in Arizona. Custom metalwork, structural welding, gates, railings, and more. Licensed, bonded, and insured.',
   generator: 'v0.app',
   icons: {
