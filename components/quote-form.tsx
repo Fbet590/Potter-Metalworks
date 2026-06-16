@@ -279,12 +279,12 @@ export function QuoteForm() {
                       : "border-background/20 bg-background/5 text-background/70 hover:border-background/40 hover:bg-background/10"
                   )}
                 >
-                  <SideGateIcon className="w-16 h-16" />
+                  <SideGateIcon className="w-24 h-24" />
                   <span className="text-sm font-semibold text-center leading-tight">
                     Side Gate
                   </span>
                   <span className="text-xs text-background/50 text-center leading-snug">
-                    Single panel, pedestrian or narrow vehicle access
+                    Single panel
                   </span>
                 </button>
 
@@ -298,12 +298,12 @@ export function QuoteForm() {
                       : "border-background/20 bg-background/5 text-background/70 hover:border-background/40 hover:bg-background/10"
                   )}
                 >
-                  <RVGateIcon className="w-16 h-16" />
+                  <RVGateIcon className="w-24 h-24" />
                   <span className="text-sm font-semibold text-center leading-tight">
                     RV Gate / Double Door
                   </span>
                   <span className="text-xs text-background/50 text-center leading-snug">
-                    Two panels, wide vehicle or RV access
+                    Two panels
                   </span>
                 </button>
               </div>
