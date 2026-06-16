@@ -47,36 +47,36 @@ function SideGateIcon({ className }: { className?: string }) {
 function RVGateIcon({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 80 80"
+      viewBox="0 0 100 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden="true"
     >
       {/* Posts */}
-      <rect x="2" y="10" width="7" height="62" rx="2" fill="currentColor" opacity="0.6" />
-      <rect x="71" y="10" width="7" height="62" rx="2" fill="currentColor" opacity="0.6" />
-      {/* Left gate panel */}
-      <rect x="11" y="14" width="25" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
+      <rect x="1" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
+      <rect x="91" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
+      {/* Left gate panel — wide */}
+      <rect x="11" y="14" width="36" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
       {/* Left rails */}
-      <line x1="11" y1="28" x2="36" y2="28" stroke="currentColor" strokeWidth="2.5" />
-      <line x1="11" y1="58" x2="36" y2="58" stroke="currentColor" strokeWidth="2.5" />
+      <line x1="11" y1="28" x2="47" y2="28" stroke="currentColor" strokeWidth="2.5" />
+      <line x1="11" y1="58" x2="47" y2="58" stroke="currentColor" strokeWidth="2.5" />
       {/* Left pickets */}
-      <line x1="20" y1="14" x2="20" y2="72" stroke="currentColor" strokeWidth="2" />
-      <line x1="28" y1="14" x2="28" y2="72" stroke="currentColor" strokeWidth="2" />
-      {/* Right gate panel */}
-      <rect x="44" y="14" width="25" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
+      <line x1="22" y1="14" x2="22" y2="72" stroke="currentColor" strokeWidth="2" />
+      <line x1="33" y1="14" x2="33" y2="72" stroke="currentColor" strokeWidth="2" />
+      {/* Right gate panel — wide */}
+      <rect x="53" y="14" width="36" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
       {/* Right rails */}
-      <line x1="44" y1="28" x2="69" y2="28" stroke="currentColor" strokeWidth="2.5" />
-      <line x1="44" y1="58" x2="69" y2="58" stroke="currentColor" strokeWidth="2.5" />
+      <line x1="53" y1="28" x2="89" y2="28" stroke="currentColor" strokeWidth="2.5" />
+      <line x1="53" y1="58" x2="89" y2="58" stroke="currentColor" strokeWidth="2.5" />
       {/* Right pickets */}
-      <line x1="52" y1="14" x2="52" y2="72" stroke="currentColor" strokeWidth="2" />
-      <line x1="60" y1="14" x2="60" y2="72" stroke="currentColor" strokeWidth="2" />
+      <line x1="64" y1="14" x2="64" y2="72" stroke="currentColor" strokeWidth="2" />
+      <line x1="75" y1="14" x2="75" y2="72" stroke="currentColor" strokeWidth="2" />
       {/* Center gap / meeting point */}
-      <line x1="40" y1="14" x2="40" y2="72" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
+      <line x1="50" y1="14" x2="50" y2="72" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
       {/* Latches */}
-      <circle cx="37" cy="43" r="3" fill="currentColor" opacity="0.8" />
-      <circle cx="43" cy="43" r="3" fill="currentColor" opacity="0.8" />
+      <circle cx="46" cy="43" r="3" fill="currentColor" opacity="0.8" />
+      <circle cx="54" cy="43" r="3" fill="currentColor" opacity="0.8" />
     </svg>
   )
 }
@@ -284,7 +284,7 @@ export function QuoteForm() {
                     Side Gate
                   </span>
                   <span className="text-xs text-background/50 text-center leading-snug">
-                    Single panel
+                    Single panel, pedestrian or narrow vehicle access
                   </span>
                 </button>
 
@@ -303,7 +303,7 @@ export function QuoteForm() {
                     RV Gate / Double Door
                   </span>
                   <span className="text-xs text-background/50 text-center leading-snug">
-                    Two panels
+                    Two panels, wide vehicle or RV access
                   </span>
                 </button>
               </div>
