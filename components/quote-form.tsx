@@ -284,7 +284,7 @@ export function QuoteForm() {
                     Side Gate
                   </span>
                   <span className="text-xs text-background/50 text-center leading-snug">
-                    Single panel, pedestrian or narrow vehicle access
+                    Single panel, or for walkway area
                   </span>
                 </button>
 
@@ -303,7 +303,7 @@ export function QuoteForm() {
                     RV Gate / Double Door
                   </span>
                   <span className="text-xs text-background/50 text-center leading-snug">
-                    Two panels, wide vehicle or RV access
+                    Two panels, for vehicle or RV access
                   </span>
                 </button>
               </div>
