@@ -8,17 +8,83 @@ import { cn } from "@/lib/utils"
 import { ChevronLeft, ChevronRight, Check } from "lucide-react"
 import { trackFBEvent } from "@/components/facebook-pixel"
 
-type FormStep = 1 | 2 | 3
+type FormStep = 1 | 2 | 3 | 4
 
 interface FormData {
+  gateType: "side-gate" | "rv-gate" | ""
   name: string
   email: string
   phone: string
 }
 
+function SideGateIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 80 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Posts */}
+      <rect x="4" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
+      <rect x="68" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
+      {/* Single gate panel */}
+      <rect x="14" y="14" width="52" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
+      {/* Horizontal rails */}
+      <line x1="14" y1="28" x2="66" y2="28" stroke="currentColor" strokeWidth="2.5" />
+      <line x1="14" y1="58" x2="66" y2="58" stroke="currentColor" strokeWidth="2.5" />
+      {/* Vertical pickets */}
+      <line x1="26" y1="14" x2="26" y2="72" stroke="currentColor" strokeWidth="2" />
+      <line x1="38" y1="14" x2="38" y2="72" stroke="currentColor" strokeWidth="2" />
+      <line x1="50" y1="14" x2="50" y2="72" stroke="currentColor" strokeWidth="2" />
+      {/* Latch */}
+      <circle cx="63" cy="43" r="3" fill="currentColor" opacity="0.8" />
+    </svg>
+  )
+}
+
+function RVGateIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 100 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Posts */}
+      <rect x="1" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
+      <rect x="91" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
+      {/* Left gate panel — wide */}
+      <rect x="11" y="14" width="36" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
+      {/* Left rails */}
+      <line x1="11" y1="28" x2="47" y2="28" stroke="currentColor" strokeWidth="2.5" />
+      <line x1="11" y1="58" x2="47" y2="58" stroke="currentColor" strokeWidth="2.5" />
+      {/* Left pickets */}
+      <line x1="22" y1="14" x2="22" y2="72" stroke="currentColor" strokeWidth="2" />
+      <line x1="33" y1="14" x2="33" y2="72" stroke="currentColor" strokeWidth="2" />
+      {/* Right gate panel — wide */}
+      <rect x="53" y="14" width="36" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
+      {/* Right rails */}
+      <line x1="53" y1="28" x2="89" y2="28" stroke="currentColor" strokeWidth="2.5" />
+      <line x1="53" y1="58" x2="89" y2="58" stroke="currentColor" strokeWidth="2.5" />
+      {/* Right pickets */}
+      <line x1="64" y1="14" x2="64" y2="72" stroke="currentColor" strokeWidth="2" />
+      <line x1="75" y1="14" x2="75" y2="72" stroke="currentColor" strokeWidth="2" />
+      {/* Center gap / meeting point */}
+      <line x1="50" y1="14" x2="50" y2="72" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
+      {/* Latches */}
+      <circle cx="46" cy="43" r="3" fill="currentColor" opacity="0.8" />
+      <circle cx="54" cy="43" r="3" fill="currentColor" opacity="0.8" />
+    </svg>
+  )
+}
+
 export function QuoteForm() {
   const [step, setStep] = useState<FormStep>(1)
   const [formData, setFormData] = useState<FormData>({
+    gateType: "",
     name: "",
     email: "",
     phone: "",
@@ -34,13 +100,12 @@ export function QuoteForm() {
   }
 
   const validatePhone = (phone: string): boolean => {
-    // Remove all non-numeric characters and check if we have 10 digits
     const cleaned = phone.replace(/\D/g, "")
     return cleaned.length >= 10
   }
 
   const handleNext = () => {
-    if (step < 3) setStep((step + 1) as FormStep)
+    if (step < 4) setStep((step + 1) as FormStep)
   }
 
   const handlePrev = () => {
@@ -55,6 +120,7 @@ export function QuoteForm() {
     const zapierUrl = "https://hooks.zapier.com/hooks/catch/24750736/4y2c0hj/"
 
     const payload = {
+      gateType: formData.gateType === "side-gate" ? "Side Gate" : "RV Gate / Double Door",
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
@@ -62,12 +128,9 @@ export function QuoteForm() {
     }
 
     try {
-      // Send to LeadConnector
       await fetch(leadConnectorUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       })
     } catch (err) {
@@ -75,22 +138,19 @@ export function QuoteForm() {
     }
 
     try {
-      // Send to Zapier
       await fetch(zapierUrl, {
         method: "POST",
         mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       })
     } catch (err) {
       console.log("[v0] Zapier webhook error:", err)
     }
 
-    // Track Facebook Lead conversion event
     trackFBEvent("Lead", {
       content_category: "Quote Request",
+      content_name: payload.gateType,
     })
 
     setSubmitted(true)
@@ -100,15 +160,13 @@ export function QuoteForm() {
   const canProceed = () => {
     switch (step) {
       case 1:
-        return formData.name !== ""
+        return formData.gateType !== ""
       case 2:
-        if (formData.email === "") return false
-        if (!validateEmail(formData.email)) {
-          return false
-        }
-        return true
+        return formData.name !== ""
       case 3:
-        // Allow submission if phone has at least 7 digits (covers various formats)
+        if (formData.email === "") return false
+        return validateEmail(formData.email)
+      case 4:
         const digits = formData.phone.replace(/\D/g, "")
         return digits.length >= 7
       default:
@@ -118,7 +176,6 @@ export function QuoteForm() {
 
   const handleEmailChange = (value: string) => {
     setFormData({ ...formData, email: value })
-    // Only show error if they've typed something that looks like an attempt at an email (contains @)
     if (value && value.includes("@") && !validateEmail(value)) {
       setErrors({ ...errors, email: "Please enter a valid email address" })
     } else {
@@ -128,7 +185,6 @@ export function QuoteForm() {
 
   const handlePhoneChange = (value: string) => {
     setFormData({ ...formData, phone: value })
-    // Clear error when user is typing
     if (errors.phone) {
       setErrors({ ...errors, phone: undefined })
     }
@@ -154,6 +210,8 @@ export function QuoteForm() {
     )
   }
 
+  const TOTAL_STEPS = 4
+
   return (
     <section id="quote-form" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -178,7 +236,7 @@ export function QuoteForm() {
         {/* Progress Bar */}
         <div className="max-w-xl mx-auto mb-8">
           <div className="flex items-center justify-between mb-2">
-            {[1, 2, 3].map((s) => (
+            {[1, 2, 3, 4].map((s) => (
               <div
                 key={s}
                 className={cn(
@@ -197,14 +255,63 @@ export function QuoteForm() {
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div
               className="h-full bg-primary transition-all duration-300"
-              style={{ width: `${((step - 1) / 2) * 100}%` }}
+              style={{ width: `${((step - 1) / (TOTAL_STEPS - 1)) * 100}%` }}
             />
           </div>
         </div>
 
         <Card className="max-w-xl mx-auto p-5 md:p-6 bg-foreground border-foreground/80">
-          {/* Step 1: Name */}
+
+          {/* Step 1: Gate Type */}
           {step === 1 && (
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-background text-center mb-6">
+                What kind of gate are you looking for?
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <button
+                  type="button"
+                  onClick={() => setFormData({ ...formData, gateType: "side-gate" })}
+                  className={cn(
+                    "flex flex-col items-center gap-3 p-5 rounded-lg border-2 transition-all",
+                    formData.gateType === "side-gate"
+                      ? "border-primary bg-primary/20 text-background"
+                      : "border-background/20 bg-background/5 text-background/70 hover:border-background/40 hover:bg-background/10"
+                  )}
+                >
+                  <SideGateIcon className="w-24 h-24" />
+                  <span className="text-sm font-semibold text-center leading-tight">
+                    Side Gate
+                  </span>
+                  <span className="text-xs text-background/50 text-center leading-snug">
+                    Single panel, or for walkway area
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setFormData({ ...formData, gateType: "rv-gate" })}
+                  className={cn(
+                    "flex flex-col items-center gap-3 p-5 rounded-lg border-2 transition-all",
+                    formData.gateType === "rv-gate"
+                      ? "border-primary bg-primary/20 text-background"
+                      : "border-background/20 bg-background/5 text-background/70 hover:border-background/40 hover:bg-background/10"
+                  )}
+                >
+                  <RVGateIcon className="w-24 h-24" />
+                  <span className="text-sm font-semibold text-center leading-tight">
+                    RV Gate / Double Door
+                  </span>
+                  <span className="text-xs text-background/50 text-center leading-snug">
+                    Two panels, for vehicle or RV access
+                  </span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Step 2: Name */}
+          {step === 2 && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-background text-center mb-4">
                 What&apos;s your name?
@@ -219,8 +326,8 @@ export function QuoteForm() {
             </div>
           )}
 
-          {/* Step 2: Email */}
-          {step === 2 && (
+          {/* Step 3: Email */}
+          {step === 3 && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-background text-center mb-4">
                 What&apos;s your email address?
@@ -243,8 +350,8 @@ export function QuoteForm() {
             </div>
           )}
 
-          {/* Step 3: Phone */}
-          {step === 3 && (
+          {/* Step 4: Phone */}
+          {step === 4 && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-background text-center mb-4">
                 Best phone number to reach you?
@@ -281,7 +388,7 @@ export function QuoteForm() {
             ) : (
               <div />
             )}
-            {step < 3 ? (
+            {step < 4 ? (
               <Button
                 onClick={handleNext}
                 disabled={!canProceed()}
