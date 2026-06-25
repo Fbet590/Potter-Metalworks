@@ -59,7 +59,7 @@ export function WhyChooseUs() {
             No More Guesswork, Hidden Costs, or Delays
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here&apos;s why Los Angeles homeowners and businesses trust us with their metalwork projects:
+            Here&apos;s why Orlando homeowners and businesses trust us with their metalwork projects:
           </p>
         </div>
 

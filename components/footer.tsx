@@ -42,7 +42,7 @@ export function Footer() {
                 </span>
               </div>
               <p className="text-card/70 mb-4">
-                California&apos;s premier welding and metal fabrication company. Serving LA and surrounding areas since 2009.
+                Florida&apos;s premier welding and metal fabrication company. Serving the greater Orlando area since 2009.
               </p>
               
             </div>
