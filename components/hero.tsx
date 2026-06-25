@@ -26,7 +26,7 @@ export function Hero() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <span className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold tracking-tight text-black">
-                <span style={{ color: "#B64E11" }}>QUICKFIX</span> WELDING
+                <span style={{ color: "#E0202A" }}>QUICKFIX</span> WELDING
               </span>
             </div>
 
