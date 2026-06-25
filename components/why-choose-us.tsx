@@ -53,13 +53,13 @@ export function WhyChooseUs() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-primary font-semibold uppercase tracking-wider mb-2">
-            Why Potter Metalworks?
+            Why Quickfix Welding?
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
             No More Guesswork, Hidden Costs, or Delays
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here&apos;s why Los Angeles homeowners and businesses trust us with their metalwork projects:
+            Here&apos;s why Orlando homeowners and businesses trust us with their metalwork projects:
           </p>
         </div>
 

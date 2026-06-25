@@ -38,11 +38,11 @@ export function Footer() {
             <div>
               <div className="mb-4">
                 <span className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-card">
-                  POTTER  METALWORKS
+                  Quickfix Welding
                 </span>
               </div>
               <p className="text-card/70 mb-4">
-                California&apos;s premier welding and metal fabrication company. Serving LA and surrounding areas since 2009.
+                Florida&apos;s premier welding and metal fabrication company. Serving the greater Orlando area since 2009.
               </p>
               
             </div>
@@ -71,7 +71,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="border-t border-card/10 py-6">
         <div className="container mx-auto px-4 text-center text-card/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Potter Metalworks. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Quickfix Welding. All rights reserved.</p>
         </div>
       </div>
     </footer>

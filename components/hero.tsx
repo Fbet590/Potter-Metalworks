@@ -26,7 +26,7 @@ export function Hero() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <span className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold tracking-tight text-black">
-                <span style={{ color: "#B64E11" }}>POTTER</span> METALWORKS
+                <span style={{ color: "#B64E11" }}>QUICKFIX</span> WELDING
               </span>
             </div>
 
@@ -132,7 +132,7 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary/90 text-primary-foreground text-sm font-semibold tracking-wider uppercase rounded">
-              CALIFORNIA&apos;S Trusted Metal Experts
+              FLORIDA&apos;S Trusted Metal Experts
             </span>
           </div>
 
@@ -142,7 +142,7 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-card/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Designed, Built and Installed
+            Built on-site. You watch your gate get assembled in front of you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

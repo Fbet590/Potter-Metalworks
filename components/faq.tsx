@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "What areas do you serve?",
-    answer: "We serve the entire Los Angeles metropolitan area including Beverly Hills, Pasadena, Santa Monica, Burbank, Glendale, Long Beach, Torrance, and surrounding communities. For larger projects, we're available throughout Southern California.",
+    answer: "We serve the greater Orlando area — from Ocala in the north, down to St. Cloud in the south, east to the Cocoa Beach area, and west to Clearwater and Tampa. These reference points give you a sense of our coverage, though exact service boundaries may vary by project.",
   },
   {
     question: "Can you work from my design or drawings?",

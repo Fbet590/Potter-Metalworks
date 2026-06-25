@@ -15,8 +15,8 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: 'Potter Metalworks | Custom Welding & Metal Fabrication in California',
-  description: 'Premier welding and fabrication services in Los Angeles, California. Custom metalwork, structural welding, gates, railings, and more. Licensed, bonded, and insured.',
+  title: 'Quickfix Welding | Custom Welding & Metal Fabrication in Orlando, Florida',
+  description: 'Premier welding and fabrication services in Orlando, Florida. Custom metalwork, structural welding, gates, railings, and more. Licensed, bonded, and insured.',
   generator: 'v0.app',
   icons: {
     icon: [
