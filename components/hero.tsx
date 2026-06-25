@@ -132,7 +132,7 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary/90 text-primary-foreground text-sm font-semibold tracking-wider uppercase rounded">
-              CALIFORNIA&apos;S Trusted Metal Experts
+              FLORIDA&apos;S Trusted Metal Experts
             </span>
           </div>
 
