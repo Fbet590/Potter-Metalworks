@@ -38,7 +38,7 @@ export function Footer() {
             <div>
               <div className="mb-4">
                 <span className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-card">
-                  Quickfix Weld
+                  Quickfix Welding
                 </span>
               </div>
               <p className="text-card/70 mb-4">
@@ -71,7 +71,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="border-t border-card/10 py-6">
         <div className="container mx-auto px-4 text-center text-card/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Quickfix Weld. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Quickfix Welding. All rights reserved.</p>
         </div>
       </div>
     </footer>
