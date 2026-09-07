@@ -26,7 +26,7 @@ export function Hero() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <span className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold tracking-tight text-black">
-                <span style={{ color: "#E0202A" }}>QUICKFIX</span> WELDING
+                <span style={{ color: "#E0202A" }}>PLATINUM</span> AZ TURF
               </span>
             </div>
 
@@ -58,7 +58,7 @@ export function Hero() {
               </button>
               <Button 
                 onClick={scrollToQuote}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="bg-[#061E11] hover:bg-[#061E11]/90 text-white"
               >
                 Get a Quote
               </Button>
@@ -103,7 +103,7 @@ export function Hero() {
                 </button>
                 <Button 
                   onClick={scrollToQuote}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
+                  className="bg-[#061E11] hover:bg-[#061E11]/90 text-white w-full"
                 >
                   Get a Quote
                 </Button>
@@ -119,7 +119,7 @@ export function Hero() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-bg.jpg"
-            alt="Custom black iron French doors with glass panes"
+            alt="Backyard remodel with artificial turf, fire pit seating area, and covered patio"
             fill
             className="object-cover"
             priority
@@ -132,23 +132,23 @@ export function Hero() {
           {/* Badge */}
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary/90 text-primary-foreground text-sm font-semibold tracking-wider uppercase rounded">
-              FLORIDA&apos;S Trusted Metal Experts
+              Arizona&apos;s Trusted Backyard Experts
             </span>
           </div>
 
           <h1 className="font-[family-name:var(--font-display)] text-[45px] md:text-5xl lg:text-6xl font-black text-card mb-6 leading-tight text-balance">
-            CUSTOM GATES. NO RUNAROUND.
+            CUSTOM BACKYARDS. NO RUNAROUND.
             <span className="block text-primary">PRICED UPFRONT.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-card/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Built on-site. You watch your gate get assembled in front of you.
+            Envisioned by you. Watch your  backyard transform in front of you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="text-lg px-8 py-6 bg-[#061E11] hover:bg-[#061E11]/90 text-white"
               onClick={scrollToQuote}
             >
               Get a Free Quote

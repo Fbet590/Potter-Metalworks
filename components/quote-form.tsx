@@ -8,83 +8,17 @@ import { cn } from "@/lib/utils"
 import { ChevronLeft, ChevronRight, Check } from "lucide-react"
 import { trackFBEvent } from "@/components/facebook-pixel"
 
-type FormStep = 1 | 2 | 3 | 4
+type FormStep = 1 | 2 | 3
 
 interface FormData {
-  gateType: "side-gate" | "rv-gate" | ""
   name: string
   email: string
   phone: string
 }
 
-function SideGateIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 80 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      {/* Posts */}
-      <rect x="4" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
-      <rect x="68" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
-      {/* Single gate panel */}
-      <rect x="14" y="14" width="52" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
-      {/* Horizontal rails */}
-      <line x1="14" y1="28" x2="66" y2="28" stroke="currentColor" strokeWidth="2.5" />
-      <line x1="14" y1="58" x2="66" y2="58" stroke="currentColor" strokeWidth="2.5" />
-      {/* Vertical pickets */}
-      <line x1="26" y1="14" x2="26" y2="72" stroke="currentColor" strokeWidth="2" />
-      <line x1="38" y1="14" x2="38" y2="72" stroke="currentColor" strokeWidth="2" />
-      <line x1="50" y1="14" x2="50" y2="72" stroke="currentColor" strokeWidth="2" />
-      {/* Latch */}
-      <circle cx="63" cy="43" r="3" fill="currentColor" opacity="0.8" />
-    </svg>
-  )
-}
-
-function RVGateIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 100 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      {/* Posts */}
-      <rect x="1" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
-      <rect x="91" y="10" width="8" height="62" rx="2" fill="currentColor" opacity="0.6" />
-      {/* Left gate panel — wide */}
-      <rect x="11" y="14" width="36" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
-      {/* Left rails */}
-      <line x1="11" y1="28" x2="47" y2="28" stroke="currentColor" strokeWidth="2.5" />
-      <line x1="11" y1="58" x2="47" y2="58" stroke="currentColor" strokeWidth="2.5" />
-      {/* Left pickets */}
-      <line x1="22" y1="14" x2="22" y2="72" stroke="currentColor" strokeWidth="2" />
-      <line x1="33" y1="14" x2="33" y2="72" stroke="currentColor" strokeWidth="2" />
-      {/* Right gate panel — wide */}
-      <rect x="53" y="14" width="36" height="58" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
-      {/* Right rails */}
-      <line x1="53" y1="28" x2="89" y2="28" stroke="currentColor" strokeWidth="2.5" />
-      <line x1="53" y1="58" x2="89" y2="58" stroke="currentColor" strokeWidth="2.5" />
-      {/* Right pickets */}
-      <line x1="64" y1="14" x2="64" y2="72" stroke="currentColor" strokeWidth="2" />
-      <line x1="75" y1="14" x2="75" y2="72" stroke="currentColor" strokeWidth="2" />
-      {/* Center gap / meeting point */}
-      <line x1="50" y1="14" x2="50" y2="72" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
-      {/* Latches */}
-      <circle cx="46" cy="43" r="3" fill="currentColor" opacity="0.8" />
-      <circle cx="54" cy="43" r="3" fill="currentColor" opacity="0.8" />
-    </svg>
-  )
-}
-
 export function QuoteForm() {
   const [step, setStep] = useState<FormStep>(1)
   const [formData, setFormData] = useState<FormData>({
-    gateType: "",
     name: "",
     email: "",
     phone: "",
@@ -105,7 +39,7 @@ export function QuoteForm() {
   }
 
   const handleNext = () => {
-    if (step < 4) setStep((step + 1) as FormStep)
+    if (step < 3) setStep((step + 1) as FormStep)
   }
 
   const handlePrev = () => {
@@ -120,7 +54,6 @@ export function QuoteForm() {
     const zapierUrl = "https://hooks.zapier.com/hooks/catch/24750736/4y2c0hj/"
 
     const payload = {
-      gateType: formData.gateType === "side-gate" ? "Side Gate" : "RV Gate / Double Door",
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
@@ -150,7 +83,7 @@ export function QuoteForm() {
 
     trackFBEvent("Lead", {
       content_category: "Quote Request",
-      content_name: payload.gateType,
+      content_name: payload.name,
     })
 
     setSubmitted(true)
@@ -160,13 +93,11 @@ export function QuoteForm() {
   const canProceed = () => {
     switch (step) {
       case 1:
-        return formData.gateType !== ""
-      case 2:
         return formData.name !== ""
-      case 3:
+      case 2:
         if (formData.email === "") return false
         return validateEmail(formData.email)
-      case 4:
+      case 3:
         const digits = formData.phone.replace(/\D/g, "")
         return digits.length >= 7
       default:
@@ -210,7 +141,7 @@ export function QuoteForm() {
     )
   }
 
-  const TOTAL_STEPS = 4
+  const TOTAL_STEPS = 3
 
   return (
     <section id="quote-form" className="py-16 md:py-24 bg-background">
@@ -220,8 +151,8 @@ export function QuoteForm() {
             Get Started Today
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-[27px] md:text-[40px] font-bold text-foreground mb-4">
-            <span className="block">Side Gates · $1,500</span>
-            <span className="block">RV Gates · $2,200</span>
+            <span className="block">Simple Backyard · $8,200</span>
+            <span className="block">Simple but BIGGER Yards · $13,800</span>
           </h2>
           <p className="text-muted-foreground text-sm md:text-base max-w-lg mx-auto">
             Need something bigger or more complex? No problem
@@ -236,7 +167,7 @@ export function QuoteForm() {
         {/* Progress Bar */}
         <div className="max-w-xl mx-auto mb-8">
           <div className="flex items-center justify-between mb-2">
-            {[1, 2, 3, 4].map((s) => (
+            {[1, 2, 3].map((s) => (
               <div
                 key={s}
                 className={cn(
@@ -262,56 +193,8 @@ export function QuoteForm() {
 
         <Card className="max-w-xl mx-auto p-5 md:p-6 bg-foreground border-foreground/80">
 
-          {/* Step 1: Gate Type */}
+          {/* Step 1: Name */}
           {step === 1 && (
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-background text-center mb-6">
-                What kind of gate are you looking for?
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                <button
-                  type="button"
-                  onClick={() => setFormData({ ...formData, gateType: "side-gate" })}
-                  className={cn(
-                    "flex flex-col items-center gap-3 p-5 rounded-lg border-2 transition-all",
-                    formData.gateType === "side-gate"
-                      ? "border-primary bg-primary/20 text-background"
-                      : "border-background/20 bg-background/5 text-background/70 hover:border-background/40 hover:bg-background/10"
-                  )}
-                >
-                  <SideGateIcon className="w-24 h-24" />
-                  <span className="text-sm font-semibold text-center leading-tight">
-                    Side Gate
-                  </span>
-                  <span className="text-xs text-background/50 text-center leading-snug">
-                    Single panel, or for walkway area
-                  </span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setFormData({ ...formData, gateType: "rv-gate" })}
-                  className={cn(
-                    "flex flex-col items-center gap-3 p-5 rounded-lg border-2 transition-all",
-                    formData.gateType === "rv-gate"
-                      ? "border-primary bg-primary/20 text-background"
-                      : "border-background/20 bg-background/5 text-background/70 hover:border-background/40 hover:bg-background/10"
-                  )}
-                >
-                  <RVGateIcon className="w-24 h-24" />
-                  <span className="text-sm font-semibold text-center leading-tight">
-                    RV Gate / Double Door
-                  </span>
-                  <span className="text-xs text-background/50 text-center leading-snug">
-                    Two panels, for vehicle or RV access
-                  </span>
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Step 2: Name */}
-          {step === 2 && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-background text-center mb-4">
                 What&apos;s your name?
@@ -326,8 +209,8 @@ export function QuoteForm() {
             </div>
           )}
 
-          {/* Step 3: Email */}
-          {step === 3 && (
+          {/* Step 2: Email */}
+          {step === 2 && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-background text-center mb-4">
                 What&apos;s your email address?
@@ -350,8 +233,8 @@ export function QuoteForm() {
             </div>
           )}
 
-          {/* Step 4: Phone */}
-          {step === 4 && (
+          {/* Step 3: Phone */}
+          {step === 3 && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-background text-center mb-4">
                 Best phone number to reach you?
@@ -388,11 +271,11 @@ export function QuoteForm() {
             ) : (
               <div />
             )}
-            {step < 4 ? (
+            {step < 3 ? (
               <Button
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                className="gap-2 bg-[#061E11] text-white hover:bg-[#061E11]/90"
               >
                 Next
                 <ChevronRight className="w-4 h-4" />
@@ -401,7 +284,7 @@ export function QuoteForm() {
               <Button
                 onClick={handleSubmit}
                 disabled={!canProceed() || isSubmitting}
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                className="bg-[#061E11] text-white hover:bg-[#061E11]/90"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </Button>

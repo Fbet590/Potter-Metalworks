@@ -8,50 +8,50 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 const testimonials = [
   {
     name: "Michael Rodriguez",
-    location: "Winter Park, FL",
-    text: "Quickfix Welding built custom gates for our home and the quality is outstanding. They were professional, on time, and the craftsmanship exceeded our expectations. Highly recommend!",
+    location: "Phoenix, AZ",
+    text: "Platinum AZ Turf completely transformed our backyard. Mario walked us through the whole design and the turf installation is outstanding. Professional, on time, and the craftsmanship exceeded our expectations. Highly recommend!",
     rating: 5,
   },
   {
     name: "Sarah Thompson",
-    location: "Orlando, FL",
-    text: "We had a beautiful iron entry door installed at our home. The team was knowledgeable, efficient, and kept us informed every step of the way. Great communication throughout the entire process.",
+    location: "Scottsdale, AZ",
+    text: "We had a full backyard remodel done with a new patio and putting green, and it turned out beautiful. Mario and his team were knowledgeable, efficient, and kept us informed every step of the way.",
     rating: 5,
   },
   {
     name: "David Martinez",
-    location: "Altamonte Springs, FL",
-    text: "Best ironwork service in the Orlando area! They fabricated custom railings for our backyard patio. Beautiful work and fair pricing. Will definitely use them again.",
+    location: "Mesa, AZ",
+    text: "Best backyard remodeling company in the Phoenix area! They redid our pavers and turf and the results are stunning. Mario made sure everything was done right. Beautiful work and fair pricing.",
     rating: 5,
   },
   {
     name: "Jennifer Williams",
-    location: "Oviedo, FL",
-    text: "We needed an RV gate for our side yard and Quickfix Welding delivered exactly what we wanted. The design is both functional and beautiful. Neighbors keep asking who did the work!",
+    location: "Chandler, AZ",
+    text: "We needed our side yard cleaned up and turfed and Platinum AZ Turf delivered exactly what we wanted. Mario's design is both functional and beautiful. Neighbors keep asking who did the work!",
     rating: 5,
   },
   {
     name: "Robert Garcia",
-    location: "Apopka, FL",
-    text: "Absolutely thrilled with our new pool fence. Safety was our priority and they made sure we got a design that was secure while still looking elegant. Professional team from start to finish.",
+    location: "Gilbert, AZ",
+    text: "Absolutely thrilled with our new pool deck and turf border. Safety was our priority and Mario made sure we got a layout that was secure for the kids while still looking elegant. Professional team from start to finish.",
     rating: 5,
   },
   {
     name: "Lisa Chen",
-    location: "Kissimmee, FL",
-    text: "Our front entry door is now the highlight of our home. The craftsmanship is incredible and it has completely transformed our curb appeal. Worth every penny!",
+    location: "Peoria, AZ",
+    text: "Our front yard is now the highlight of the neighborhood. Mario and the Platinum AZ Turf crew installed turf that looks incredible year-round. Worth every penny!",
     rating: 5,
   },
   {
     name: "Mark Johnson",
-    location: "Waterford, FL",
-    text: "Had them install a custom side gate and stair railing. Both pieces match perfectly and look like they were always meant to be part of our home. Excellent attention to detail.",
+    location: "Tempe, AZ",
+    text: "Had them build out an outdoor kitchen and turf backyard remodel. Everything matches perfectly and looks like it was always meant to be part of our home. Mario paid excellent attention to detail.",
     rating: 5,
   },
   {
     name: "Amanda Foster",
-    location: "Lake Mary, FL",
-    text: "From the initial consultation to the final installation, everything was seamless. Our iron entry door is stunning and the quality is top-notch. Highly recommend Quickfix Welding!",
+    location: "Glendale, AZ",
+    text: "From the initial consultation with Mario to the final walkthrough, everything was seamless. Our backyard remodel is stunning and the quality is top-notch. Highly recommend Platinum AZ Turf!",
     rating: 5,
   },
 ]
@@ -137,7 +137,7 @@ export function Testimonials() {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            className="bg-[#061E11] text-white hover:bg-[#061E11]/90"
             onClick={scrollToQuote}
           >
             Start Your Project
