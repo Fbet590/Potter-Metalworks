@@ -3,12 +3,12 @@ import { Shield, Award, Clock, Users } from "lucide-react"
 const stats = [
   {
     icon: Clock,
-    value: "30+",
+    value: "20+",
     label: "Years Experience",
   },
   {
     icon: Users,
-    value: "2,500+",
+    value: "500+",
     label: "Projects Completed",
   },
   {
