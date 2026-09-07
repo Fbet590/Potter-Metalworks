@@ -15,8 +15,8 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: 'Quickfix Welding | Custom Welding & Metal Fabrication in Orlando, Florida',
-  description: 'Premier welding and fabrication services in Orlando, Florida. Custom metalwork, structural welding, gates, railings, and more. Licensed, bonded, and insured.',
+  title: 'Platinum AZ Turf | Custom Backyard Remodeling in Phoenix, Arizona',
+  description: 'Arizona\'s trusted backyard experts. Custom backyard remodeling, artificial turf, patios, and outdoor living spaces — priced upfront, no runaround.',
   generator: 'v0.app',
   icons: {
     icon: [

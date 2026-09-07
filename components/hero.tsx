@@ -119,7 +119,7 @@ export function Hero() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-bg.jpg"
-            alt="Custom black iron French doors with glass panes"
+            alt="Backyard remodel with artificial turf, fire pit seating area, and covered patio"
             fill
             className="object-cover"
             priority
