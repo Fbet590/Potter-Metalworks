@@ -50,7 +50,7 @@ export function QuoteForm() {
     setIsSubmitting(true)
     setSubmitError(null)
 
-    const leadConnectorUrl = "https://services.leadconnectorhq.com/hooks/i7CCGVZUWTeOXat1IHdu/webhook-trigger/2fa6827b-68f1-4d28-94d9-7b3c53202f7c"
+    const leadConnectorUrl = "https://services.leadconnectorhq.com/hooks/qPfcbKLjQTVPRhcC22Qq/webhook-trigger/ddf35372-3213-4ab5-811e-5d0b2d7efc4d"
     const zapierUrl = "https://hooks.zapier.com/hooks/catch/24750736/4y2c0hj/"
 
     const payload = {
