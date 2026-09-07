@@ -275,12 +275,8 @@ export function QuoteForm() {
                     errors.phone ? "border-red-500" : "border-background/30"
                   )}
                 />
-                {errors.phone ? (
+                {errors.phone && (
                   <p className="text-red-400 text-sm">{errors.phone}</p>
-                ) : (
-                  <p className="text-background/50 text-sm">
-                    Enter a valid 10-digit US phone number
-                  </p>
                 )}
               </div>
             </div>
