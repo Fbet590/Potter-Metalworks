@@ -392,7 +392,7 @@ export function QuoteForm() {
               <Button
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                className="gap-2 bg-[#061E11] text-white hover:bg-[#061E11]/90"
               >
                 Next
                 <ChevronRight className="w-4 h-4" />
@@ -401,7 +401,7 @@ export function QuoteForm() {
               <Button
                 onClick={handleSubmit}
                 disabled={!canProceed() || isSubmitting}
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                className="bg-[#061E11] text-white hover:bg-[#061E11]/90"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </Button>

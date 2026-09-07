@@ -58,7 +58,7 @@ export function Hero() {
               </button>
               <Button 
                 onClick={scrollToQuote}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="bg-[#061E11] hover:bg-[#061E11]/90 text-white"
               >
                 Get a Quote
               </Button>
@@ -103,7 +103,7 @@ export function Hero() {
                 </button>
                 <Button 
                   onClick={scrollToQuote}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
+                  className="bg-[#061E11] hover:bg-[#061E11]/90 text-white w-full"
                 >
                   Get a Quote
                 </Button>
@@ -148,7 +148,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="text-lg px-8 py-6 bg-[#061E11] hover:bg-[#061E11]/90 text-white"
               onClick={scrollToQuote}
             >
               Get a Free Quote

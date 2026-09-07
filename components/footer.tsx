@@ -22,7 +22,7 @@ export function Footer() {
           <Button 
               size="lg" 
               className="text-white hover:bg-opacity-90"
-              style={{ backgroundColor: "#E0202A" }}
+              style={{ backgroundColor: "#061E11" }}
               onClick={scrollToQuote}
             >
               Get a Free Quote

@@ -58,7 +58,7 @@ export function Services() {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            className="bg-[#061E11] text-white hover:bg-[#061E11]/90"
             onClick={scrollToQuote}
           >
             Get a Free Quote
