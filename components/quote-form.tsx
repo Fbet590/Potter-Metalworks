@@ -35,7 +35,22 @@ export function QuoteForm() {
 
   const validatePhone = (phone: string): boolean => {
     const cleaned = phone.replace(/\D/g, "")
-    return cleaned.length >= 10
+    // Require exactly 10 digits, and reject obviously fake numbers
+    // (all repeating digits like 5555555555, or numbers starting with 0/1
+    // which are not valid US area codes)
+    if (cleaned.length !== 10) return false
+    if (/^0/.test(cleaned) || /^1/.test(cleaned)) return false
+    if (/^(\d)\1{9}$/.test(cleaned)) return false
+    return true
+  }
+
+  const formatPhone = (value: string): string => {
+    const digits = value.replace(/\D/g, "").slice(0, 10)
+    const len = digits.length
+    if (len === 0) return ""
+    if (len < 4) return `(${digits}`
+    if (len < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`
   }
 
   const handleNext = () => {
@@ -50,7 +65,7 @@ export function QuoteForm() {
     setIsSubmitting(true)
     setSubmitError(null)
 
-    const leadConnectorUrl = "https://services.leadconnectorhq.com/hooks/i7CCGVZUWTeOXat1IHdu/webhook-trigger/2fa6827b-68f1-4d28-94d9-7b3c53202f7c"
+    const leadConnectorUrl = "https://services.leadconnectorhq.com/hooks/qPfcbKLjQTVPRhcC22Qq/webhook-trigger/ddf35372-3213-4ab5-811e-5d0b2d7efc4d"
     const zapierUrl = "https://hooks.zapier.com/hooks/catch/24750736/4y2c0hj/"
 
     const payload = {
@@ -98,8 +113,7 @@ export function QuoteForm() {
         if (formData.email === "") return false
         return validateEmail(formData.email)
       case 3:
-        const digits = formData.phone.replace(/\D/g, "")
-        return digits.length >= 7
+        return validatePhone(formData.phone)
       default:
         return true
     }
@@ -115,8 +129,16 @@ export function QuoteForm() {
   }
 
   const handlePhoneChange = (value: string) => {
-    setFormData({ ...formData, phone: value })
-    if (errors.phone) {
+    const formatted = formatPhone(value)
+    setFormData({ ...formData, phone: formatted })
+    const digits = formatted.replace(/\D/g, "")
+    if (digits.length === 0) {
+      setErrors({ ...errors, phone: undefined })
+    } else if (digits.length < 10) {
+      setErrors({ ...errors, phone: "Phone number must be 10 digits" })
+    } else if (!validatePhone(formatted)) {
+      setErrors({ ...errors, phone: "Please enter a valid phone number" })
+    } else {
       setErrors({ ...errors, phone: undefined })
     }
   }
@@ -242,16 +264,23 @@ export function QuoteForm() {
               <div className="space-y-2">
                 <Input
                   type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel"
                   placeholder="(555) 555-5555"
                   value={formData.phone}
                   onChange={(e) => handlePhoneChange(e.target.value)}
+                  maxLength={14}
                   className={cn(
                     "py-5 bg-background/10 text-background placeholder:text-background/50",
                     errors.phone ? "border-red-500" : "border-background/30"
                   )}
                 />
-                {errors.phone && (
+                {errors.phone ? (
                   <p className="text-red-400 text-sm">{errors.phone}</p>
+                ) : (
+                  <p className="text-background/50 text-sm">
+                    Enter a valid 10-digit US phone number
+                  </p>
                 )}
               </div>
             </div>
