@@ -34,35 +34,16 @@ export function Footer() {
       <div className="py-12" style={{ backgroundColor: "#0D0D0D" }}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            {/* Company Info */}
-            <div>
-              <div className="mb-4">
-                <span className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-card">
-                  Quickfix Welding
-                </span>
-              </div>
-              <p className="text-card/70 mb-4">
-                Florida&apos;s premier welding and metal fabrication company. Serving the greater Orlando area since 2009.
-              </p>
-              
-            </div>
-
-            
-
             {/* Hours */}
             <div>
               <h4 className="font-semibold text-lg mb-4">Business Hours</h4>
               <ul className="space-y-2 text-card/70">
                 <li className="flex items-center gap-3">
                   <Clock className="w-4 h-4 text-primary" />
-                  <span>Monday – Friday: 5pm - 8pm</span>
+                  <span>Monday – Friday: 7am - 6pm</span>
                 </li>
-                <li className="pl-7">Saturday: 8am – 5pm</li>
-                <li className="pl-7">Sunday: 8am - 5pm</li>
+                <li className="pl-7">Saturday: 7am – 6pm</li>
               </ul>
-              <p className="mt-4 text-sm text-card/60">
-                Emergency services available 24/7 for existing customers.
-              </p>
             </div>
           </div>
         </div>
@@ -71,7 +52,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="py-6" style={{ backgroundColor: "#0D0D0D", borderTop: "1px solid #888" }}>
         <div className="container mx-auto px-4 text-center text-card/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Quickfix Welding. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Platinum AZ Turf. All rights reserved.</p>
         </div>
       </div>
     </footer>
